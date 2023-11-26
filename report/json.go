@@ -12,6 +12,13 @@ func writeJson(findings []Finding, w io.WriteCloser) error {
 	defer w.Close()
 
 	encoder := json.NewEncoder(w)
-	encoder.SetIndent("", " ")
-	return encoder.Encode(findings)
+	
+        for _, finding := range findings {
+                err := encoder.Encode(finding)
+                if err != nil {
+                     return err
+                }
+        }
+
+	return nil
 }
