@@ -1,0 +1,24 @@
+title = "my new config"
+
+#[[repos]]
+#    repo = "repo"
+#    branches = ["open-secrets", "master"]
+[[rules]]
+id = "custom-password"
+description = "Custom password field"
+regex = '''(?i)(?:administrator_login_password|password)(?:[0-9a-z\-_\t .]{0,20})(?:[\s|']|[\s|"]){0,3}(?:=|>|:{1,3}=|\|\|:|<=|=>|:|\?=)(?:'|\"|\s|=|\x60){0,5}("[a-z0-9=_\-]{8,20}")(?:['|\"|\n|\r|\s|\x60|;]|$)'''
+keywords = [
+    "administrator_login_password","password",
+]
+[[rules]]
+id = "root"
+description = "Root field"
+keywords = [
+    "root", "root_pass", "root_password"
+]
+[[rules]]
+regex = "api"
+max_severity = "medium"
+[[rules]]
+regex = "user"
+max_severity = "low"
