@@ -7,7 +7,7 @@
 - id: gitleaks-detect
   name: Detect hardcoded secrets
   description: Detect hardcoded secrets using Gitleaks
-  entry: gitleaks detect --source . -v --config custom-config-gitleaks.toml --report-path report-gitleaks.json
+  entry: gitleaks detect --source . -v --report-path report-gitleaks.json
   language: golang
   pass_filenames: false
 - id: gitleaks-docker
