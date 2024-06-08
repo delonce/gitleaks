@@ -1,7 +1,7 @@
 - id: gitleaks
   name: Detect hardcoded secrets
   description: Detect hardcoded secrets using Gitleaks
-  entry: gitleaks detect --source . -v --report-path report-gitleaks.json
+  entry: gitleaks protect --source . -v --report-path report-gitleaks.json
   language: golang
   pass_filenames: false
 - id: gitleaks-docker
